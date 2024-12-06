@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { ContextProvider } from './ContextProvider/AuthContext';
 
 const AddItem = () => {
+
+  const {user} = useContext(ContextProvider);
+  console.log(user?.email, user?.displayName);
 
   const handleAddItem = e =>{
     e.preventDefault();
@@ -160,7 +165,7 @@ const AddItem = () => {
             type="text"
             name="userName"
             readOnly
-            value={"rabiul"}
+            value={user?.displayName}
             className="input bg-gray-100 input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -172,7 +177,7 @@ const AddItem = () => {
             type="email"
             name="userEmail"
             readOnly
-            value={"islam"}
+            value={user?.email}
             className="input bg-gray-100 input-bordered input-info w-full mt-1 "
           />
         </div>

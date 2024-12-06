@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import app from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export const ContextProvider = createContext();
 
@@ -12,6 +12,7 @@ const AuthContext = ({children}) => {
 
     const [allItems, setAllItems] = useState([]);
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() =>{
         fetch('http://localhost:5000/allItems')
@@ -23,7 +24,7 @@ const AuthContext = ({children}) => {
 
    // create user by email and password
    const creatNewUser = (email, password)=> {
-
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
    }
 
@@ -33,6 +34,7 @@ const AuthContext = ({children}) => {
         if(currentUser){
             setUser(currentUser);
         }
+        setLoading(false);
         
     })
     return unSubscribe;
@@ -40,9 +42,16 @@ const AuthContext = ({children}) => {
 
    // login
    const userLogin = (email, password) =>{
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
    }
 
+   // logOUt
+   const logOut = () =>{
+    setLoading(true);
+    //console.log("logout authentication")
+    return signOut(auth);
+    }
 
     const contextValue = {
         allItems,
@@ -51,6 +60,8 @@ const AuthContext = ({children}) => {
         user,
         setUser,
         userLogin,
+        logOut,
+        auth,
 
     }
 

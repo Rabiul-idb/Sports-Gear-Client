@@ -2,18 +2,31 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { ContextProvider } from "./ContextProvider/AuthContext";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
 
-    const { user, setUser, allItems} = useContext(ContextProvider);
+    const { user, logOut, setUser, allItems } = useContext(ContextProvider);
 
     const [show, setShow] = useState(false);
 
-    const handlelogOut = ()=>{
+  const handleLogOut = ()=>{
+    logOut()
+    .then(()=>{
+
+        Swal.fire({
+            title: 'Success!',
+            text: ' Successfully LogOut',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        })
         setUser(null);
-        
-    }
+    })
+    .catch(err =>{
+        console.log(err);
+    })
+  }
 
     return (
         <div>
@@ -59,11 +72,11 @@ const Navbar = () => {
                             <li className="block lg:hidden"><a>{user?.displayName}</a></li>
                             <li><a>{user?.email}</a></li>
                             <li>
-                                <Link to={"/updateInfo"} className="justify-between text-info">
+                                <Link to={"/user/updateInfo"} className="justify-between text-info">
                                 update profile
                                 </Link>
                             </li>
-                            <li onClick={handlelogOut} className="font-semibold text-red-500"><a>Logout</a></li>
+                            <li onClick={handleLogOut} className="font-semibold text-red-500"><a>Logout</a></li>
                             </ul>
                         </div>
                     ) : (

@@ -10,6 +10,7 @@ import ProductDetails from './Components/ProductDetails';
 import Login from './Components/Authentication/login';
 import Register from './Components/Authentication/Register';
 import AuthContext from './Components/ContextProvider/AuthContext';
+import UpdateInfo from './Components/Authentication/UpdateInfo';
 
 
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/user/updateInfo",
+        element: <UpdateInfo></UpdateInfo>
       }
     ]
   },
