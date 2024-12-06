@@ -11,6 +11,7 @@ import Login from './Components/Authentication/login';
 import Register from './Components/Authentication/Register';
 import AuthContext from './Components/ContextProvider/AuthContext';
 import UpdateInfo from './Components/Authentication/UpdateInfo';
+import MyEquipments from './Components/PrivateRoute/MyEquipments';
 
 
 
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
       {
         path: "/addItem",
         element: <AddItem></AddItem>
+      },
+      {
+        path: "/myEquipments/:email",
+        element: <MyEquipments></MyEquipments>,
+        loader: ({params}) => fetch(`http://localhost:5000/allItems/${params.email}`),
+
       },
       {
         path: "/login",

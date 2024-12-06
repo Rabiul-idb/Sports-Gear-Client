@@ -43,6 +43,7 @@ const Navbar = () => {
                     {/* {
                         user?.email && (<li><NavLink to={"/dashboard"} className="text-base font-semibold">Dashboard</NavLink></li>) 
                     } */}
+                    <li><NavLink to={`/myEquipments/${user?.email}`} className="text-base font-semibold">My Equipments</NavLink></li>
                     <li><NavLink to={"/contact"} className="text-base font-semibold">Contact</NavLink></li>
 
                     
