@@ -1,4 +1,6 @@
-import { useLoaderData } from "react-router-dom";
+import { CiEdit } from "react-icons/ci";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const MyEquipments = () => {
@@ -35,7 +37,8 @@ const MyEquipments = () => {
                             <td>{item.pRating}</td>
                             
                             <td>
-                                <button onClick={() => handleViewDetails(item._id)} className="btn btn-info">View Details</button>
+                                <Link to={`/updateEquipment/${item._id}`} className="btn text-red-500 text-lg" title="edit"><CiEdit /></Link>
+                                <button className="btn text-red-500 text-lg ml-2" title="delete"><RiDeleteBin6Line /></button>
                             </td>
                         </tr>
                     )

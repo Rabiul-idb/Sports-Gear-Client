@@ -12,6 +12,7 @@ import Register from './Components/Authentication/Register';
 import AuthContext from './Components/ContextProvider/AuthContext';
 import UpdateInfo from './Components/Authentication/UpdateInfo';
 import MyEquipments from './Components/PrivateRoute/MyEquipments';
+import UpdateEquipment from './Components/PrivateRoute/UpdateEquipment';
 
 
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
       {
         path: "/user/updateInfo",
         element: <UpdateInfo></UpdateInfo>
+      },
+      {
+        path: "/updateEquipment/:id",
+        element: <UpdateEquipment></UpdateEquipment>,
+        loader: ({params}) => fetch( `http://localhost:5000/updateEquipment/${params.id}`)
       }
     ]
   },
