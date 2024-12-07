@@ -39,7 +39,7 @@ const ProductsCard = () => {
                 <div className="flex justify-between items-center">
                   <p className="font-medium text-lg">Price($): {item.pPrice}</p>
                   <button
-                    onClick={() => navigate(`/products/${item.id}`)}
+                    onClick={() => navigate(`/productDetails/${item._id}`)}
                     className="btn btn-info text-lg "
                   >
                     View Details
