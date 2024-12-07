@@ -9,6 +9,11 @@
     background-color: #152d41;
 } */
 
+.userIcon:hover .userInfo{
+  display: block;
+  z-index: 10;
+}
+
 body{
     font-family: 'Sora', sans-serif;
   }

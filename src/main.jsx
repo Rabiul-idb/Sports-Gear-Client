@@ -15,6 +15,7 @@ import MyEquipments from "./Components/PrivateRoute/MyEquipments";
 import UpdateEquipment from "./Components/PrivateRoute/UpdateEquipment";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Error from "./Components/Error";
+import Products from "./Components/HomePage/Products";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage></Homepage>,
+        loader: () => fetch("http://localhost:5000/allItems"),
+      },
+      {
+        path: "/allEquipments",
+        element: <Products></Products>,
         loader: () => fetch("http://localhost:5000/allItems"),
       },
       {
