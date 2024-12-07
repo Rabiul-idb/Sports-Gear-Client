@@ -54,7 +54,9 @@ const MyEquipments = () => {
         My Sports Equipments
       </h2>
       <button onClick={() => navigate('/addItem')} className="btn btn-info font-semibold text-lg float-right mb-4">Add Equipment</button>
-      <table className="table bg-blue-100 text-base font-semibold ">
+      {
+        equipments.length > 0 ? (
+            <table className="table bg-blue-100 text-base font-semibold ">
         {/* head */}
         <thead className="text-lg">
           <tr>
@@ -102,7 +104,13 @@ const MyEquipments = () => {
             );
           })}
         </tbody>
-      </table>
+            </table>
+        ): (
+            <div className="text-center text-4xl text-red-400 font-semibold mt-8">
+            No Equipments Found
+            </div>
+        )
+      }
     </div>
   );
 };
