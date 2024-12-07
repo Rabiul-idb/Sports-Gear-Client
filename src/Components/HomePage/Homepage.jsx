@@ -1,5 +1,6 @@
 import Banner from "./Banner";
-import Products from "./Products";
+import Products from "../Products";
+import ProductsCard from "./ProductsCard";
 
 
 
@@ -11,8 +12,8 @@ const Homepage = () => {
         <div>
             
           <Banner></Banner>
-          <Products></Products>
-          
+          {/* <Products></Products> */}
+          <ProductsCard></ProductsCard>
 
             {/* https://i.ibb.co.com/XkSyTmt/badminton-cock.webp
 https://i.ibb.co.com/8MnfqJq/badminton-racket.jpg

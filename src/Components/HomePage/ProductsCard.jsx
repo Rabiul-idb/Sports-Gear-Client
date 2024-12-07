@@ -1,0 +1,58 @@
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+
+const ProductsCard = () => {
+  const allItems = useLoaderData();
+  console.log(allItems);
+
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h2 className="text-4xl text-center my-5 font-semibold">
+        Products cards
+      </h2>
+      <div className="w-11/12 mx-auto grid grid-cols-3 gap-6">
+        {allItems.map((item) => {
+          return (
+            <div className="border rounded-lg p-5">
+              <img
+                src={item.pImg}
+                className="w-full rounded-lg object-contain h-[200px] mb-4"
+                alt=""
+              />
+              <div>
+                <h2 className="font-semibold text-xl">{item.pName}</h2>
+                <p className="font-medium text-lg text-gray-600">
+                  {item.pDesc}
+                </p>
+                <p
+                  className={`font-medium text-lg text-gray-600 ${
+                    item.stockStatus === "available"
+                      ? "text-green-600"
+                      : "text-red-500"
+                  }`}
+                >
+                  {" "}
+                  <span className="text-black">Available:</span>{" "}
+                  {item.stockStatus}
+                </p>
+                <div className="flex justify-between items-center">
+                  <p className="font-medium text-lg">Price($): {item.pPrice}</p>
+                  <button
+                    onClick={() => navigate(`/products/${item.id}`)}
+                    className="btn btn-info text-lg "
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <Link to={'/allEquipments'} className="btn btn-info text-lg block w-fit pt-2 mx-auto mt-5">Show All Products</Link>
+    </div>
+  );
+};
+
+export default ProductsCard;

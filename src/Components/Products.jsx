@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLoaderData, useNavigate } from "react-router-dom";
 
 
 const Products = () => {
@@ -21,9 +21,9 @@ const allItems = useLoaderData();
       <div className="border p-2 rounded-lg ">
         {
          uniqueCategories.map(cat => (
-            <NavLink key={cat} className="flex items-center my-3 p-2 text-lg font-semibold border px-6 rounded-xl bg-blue-100">
+            <Link to={`/`} key={cat} className="flex items-center my-3 p-2 text-lg font-semibold border px-6 rounded-xl bg-blue-100">
               {cat}
-            </NavLink>
+            </Link>
           ))
           
         }
