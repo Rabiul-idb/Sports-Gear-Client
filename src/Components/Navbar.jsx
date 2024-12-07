@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
 
-    const { user, logOut, setUser, allItems } = useContext(ContextProvider);
+    const { user, logOut, setUser } = useContext(ContextProvider);
 
     const [show, setShow] = useState(false);
 
@@ -63,7 +63,7 @@ const Navbar = () => {
                             <div tabIndex={0} role="button" onClick={()=> setShow(!show)} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-11 rounded-full">
                                     <img alt="user" className="w-11 h-11 rounded-full"
-                                    src={user?.photoURL} />
+                                    src={user.photoURL} />
                                 </div>
                             </div>
                             <ul

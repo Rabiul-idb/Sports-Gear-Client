@@ -14,11 +14,13 @@ import UpdateInfo from "./Components/Authentication/UpdateInfo";
 import MyEquipments from "./Components/PrivateRoute/MyEquipments";
 import UpdateEquipment from "./Components/PrivateRoute/UpdateEquipment";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Error from "./Components/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayOut></MainLayOut>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
