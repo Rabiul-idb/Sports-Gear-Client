@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
-import { ContextProvider } from './ContextProvider/AuthContext';
+import { ContextProvider } from '../ContextProvider/AuthContext';
 
 const AddItem = () => {
 

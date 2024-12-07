@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
 
     return (
-        <div className="w-11/12 mx-auto border p-5 rounded-md my-8">
+        <div className="w-11/12 mx-auto border p-5 rounded-md my-8 bg-cyan-50">
             <h2 className="text-center font-semibold text-2xl my-5">Equipment Item Details</h2>
             <div className=" grid grid-cols-12 gap-6">
             <figure className="col-span-5">

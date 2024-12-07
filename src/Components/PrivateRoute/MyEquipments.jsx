@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { CiEdit } from "react-icons/ci";
+import { FcViewDetails } from "react-icons/fc";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyEquipments = () => {
   const myEquipments = useLoaderData();
   console.log(myEquipments);
+  const navigate = useNavigate();
 
   const [equipments, setEquipments] = useState(myEquipments);
 
@@ -42,11 +44,16 @@ const MyEquipments = () => {
     });
   };
 
+  const ViewDetails = (id) =>{
+    navigate(`/productDetails/${id}`);
+  }
+
   return (
-    <div>
+    <div className="w-11/12 mx-auto">
       <h2 className="text-2xl font-semibold text-center my-5">
         My Sports Equipments
       </h2>
+      <button onClick={() => navigate('/addItem')} className="btn btn-info font-semibold text-lg float-right mb-4">Add Equipment</button>
       <table className="table bg-blue-100 text-base font-semibold ">
         {/* head */}
         <thead className="text-lg">
@@ -75,6 +82,7 @@ const MyEquipments = () => {
                 <td>{item.pRating}</td>
 
                 <td>
+                    <button onClick={()=>ViewDetails(item._id)} className="btn text-green-500 text-lg mr-2" title="View Details"><FcViewDetails /></button>
                   <Link
                     to={`/updateEquipment/${item?._id}`}
                     className="btn text-blue-800 text-lg"

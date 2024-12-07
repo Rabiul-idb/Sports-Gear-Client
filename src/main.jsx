@@ -5,8 +5,8 @@ import './index.css'
 import { createBrowserRouter,  RouterProvider,} from "react-router-dom";
 import Homepage from './Components/HomePage/Homepage';
 import MainLayOut from './Components/MainLayOut/MainLayOut';
-import AddItem from './Components/AddItem';
-import ProductDetails from './Components/ProductDetails';
+import AddItem from './Components/PrivateRoute/AddItem';
+import ProductDetails from './Components/PrivateRoute/ProductDetails';
 import Login from './Components/Authentication/login';
 import Register from './Components/Authentication/Register';
 import AuthContext from './Components/ContextProvider/AuthContext';
