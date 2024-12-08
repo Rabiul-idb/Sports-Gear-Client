@@ -143,7 +143,7 @@ const AddItem = () => {
           <input
             type="text"
             name="p_time"
-            placeholder="Procecing Time" required
+            placeholder="Delivery Time" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -152,9 +152,9 @@ const AddItem = () => {
           <label className="">Stock Satus:</label>
           <br></br>
           <input
-            type="text"
+            type="number"
             name="stock_status"
-            placeholder="Set stock Availability" required
+            placeholder="Available quantity" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>

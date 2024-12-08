@@ -162,7 +162,7 @@ const UpdateEquipment = () => {
             type="text"
             name="p_time"
             defaultValue={updateItem.pTime}
-            placeholder="Procecing Time"
+            placeholder="Delevery Time"
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -171,10 +171,10 @@ const UpdateEquipment = () => {
           <label className="">Stock Satus:</label>
           <br></br>
           <input
-            type="text"
+            type="number"
             name="stock_status"
             defaultValue={updateItem.stockStatus}
-            placeholder="Set stock Availability"
+            placeholder="Available Products"
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>

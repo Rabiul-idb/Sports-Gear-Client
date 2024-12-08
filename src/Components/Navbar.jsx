@@ -31,12 +31,12 @@ const Navbar = () => {
       <div className="navbar flex justify-between items-center w-11/12 mx-auto ">
         <div className="">
           <img src={logo} className="max-w-14" alt="" />
-          <Link to={"/"} className="ml-2 text-xl lg:text-2xl font-semibold ">
+          <Link to={"/"} className="ml-1 text-lg lg:text-xl font-semibold ">
             SportsGear
           </Link>
         </div>
         <div>
-          <ul className="hidden lg:flex gap-4 ">
+          <ul className="hidden lg:flex gap-3 ">
             <li>
               <NavLink to={"/"} className="text-base font-medium">
                 Home
@@ -79,7 +79,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="">
-          <div className="hidden lg:block font-semibold text-black text-base mr-2">
+          <div className="hidden lg:block font-medium text-black text-base mr-1">
             {user && user?.email ? user?.displayName : ""}
           </div>
 
