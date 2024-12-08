@@ -95,7 +95,7 @@ const AddItem = () => {
             <label className="">Product Rating-(1-5):</label>
             <br></br>
             <input
-              type="text"
+              type="number"
               name="p_Rating"
               placeholder="Product Rating" required
               className="input input-bordered input-info w-full mt-1 "

@@ -97,7 +97,7 @@ const UpdateEquipment = () => {
             <label className="">Product Price-$:</label>
             <br></br>
             <input
-              type="text"
+              type="number"
               name="p_price"
               defaultValue={updateItem.pPrice}
               placeholder="Product Price"

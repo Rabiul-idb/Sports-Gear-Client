@@ -78,7 +78,7 @@ const Footer = () => {
         </footer>
         <div className="border-t bg-slate-200 shadow">
           <p className="font-semibold text-gray-500 text-center py-7">
-            &copy; 2024 Career Compass. All rights reserved.
+            &copy; 2024 SportsGear@Rabiul islam. All rights reserved.
           </p>
         </div>
       </div>

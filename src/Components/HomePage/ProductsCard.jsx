@@ -27,7 +27,7 @@ const ProductsCard = () => {
                 </p>
                 <p
                   className={`font-medium text-lg text-gray-600 ${
-                    item.stockStatus === "available"
+                    item.stockStatus > 5
                       ? "text-green-600"
                       : "text-red-500"
                   }`}
