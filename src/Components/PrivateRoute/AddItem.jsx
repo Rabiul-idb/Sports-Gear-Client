@@ -55,7 +55,7 @@ const AddItem = () => {
         <h2 className="font-bold text-2xl text-black text-center my-5">Add Sport Equipment</h2>
         
       <form onSubmit={handleAddItem} className="max-w-5xl mx-auto p-6 bg-gray-100 shadow-lg border rounded-md space-y-4">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
           {/* Product name */}
           <div>
             <label className="">Product Name:</label>
@@ -63,7 +63,7 @@ const AddItem = () => {
             <input
               type="text"
               name="p_name"
-              placeholder="Product Name"
+              placeholder="Product Name" required
               className="input input-bordered input-info w-full mt-1 "
             />
           </div>
@@ -74,7 +74,7 @@ const AddItem = () => {
             <input
               type="text"
               name="p_cat"
-              placeholder="Product Category"
+              placeholder="Product Category" required
               className="input input-bordered input-info w-full mt-1 "
             />
           </div>
@@ -85,7 +85,7 @@ const AddItem = () => {
             <input
               type="text"
               name="p_price"
-              placeholder="Product Price"
+              placeholder="Product Price" required
               className="input input-bordered input-info w-full mt-1 "
             />
           </div>
@@ -96,7 +96,7 @@ const AddItem = () => {
             <input
               type="text"
               name="p_Rating"
-              placeholder="Product Rating"
+              placeholder="Product Rating" required
               className="input input-bordered input-info w-full mt-1 "
             />
           </div>
@@ -108,7 +108,7 @@ const AddItem = () => {
           <textarea
             type="text"
             name="p_desc"
-            placeholder="Product Description"
+            placeholder="Product Description" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -119,7 +119,7 @@ const AddItem = () => {
           <input
             type="text"
             name="p_img"
-            placeholder="Product Image URL"
+            placeholder="Product Image URL" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -130,11 +130,11 @@ const AddItem = () => {
           <input
             type="text"
             name="p_cus"
-            placeholder="Product Customization"
+            placeholder="Product Customization" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
-       <div className="grid grid-cols-2 gap-6">
+       <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
             {/*Procecing time*/}
         <div>
           <label className="">Procecing Time:</label>
@@ -142,7 +142,7 @@ const AddItem = () => {
           <input
             type="text"
             name="p_time"
-            placeholder="Procecing Time"
+            placeholder="Procecing Time" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>
@@ -153,7 +153,7 @@ const AddItem = () => {
           <input
             type="text"
             name="stock_status"
-            placeholder="Set stock Availability"
+            placeholder="Set stock Availability" required
             className="input input-bordered input-info w-full mt-1 "
           />
         </div>

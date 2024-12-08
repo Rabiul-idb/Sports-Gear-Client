@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import logo from '../assets/images/sportsgearLogo.png';
 import { FaBars } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { ContextProvider } from "./ContextProvider/AuthContext";
@@ -26,32 +27,32 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div className="navbar  flex justify-between items-center w-11/12 mx-auto">
+    <div className="bg-slate-100 shadow-md sticky top-0 z-10">
+      <div className="navbar flex justify-between items-center w-11/12 mx-auto ">
         <div className="">
-          {/* <img src={logo} alt="" /> */}
+          <img src={logo} className="max-w-14" alt="" />
           <Link to={"/"} className="ml-2 text-xl lg:text-2xl font-semibold ">
             SportsGear
           </Link>
         </div>
         <div>
-          <ul className="hidden lg:flex gap-6 ">
+          <ul className="hidden lg:flex gap-4 ">
             <li>
-              <NavLink to={"/"} className="text-base font-semibold">
+              <NavLink to={"/"} className="text-base font-medium">
                 Home
               </NavLink>
             </li>
             <li>
               <NavLink
                 to={"/allEquipments"}
-                className="text-base font-semibold"
+                className="text-base font-medium"
               >
                 All Equipments
               </NavLink>
             </li>
             {user?.email && (
               <li>
-                <NavLink to={"/addItem"} className="text-base font-semibold">
+                <NavLink to={"/addItem"} className="text-base font-medium">
                   Add Equipment
                 </NavLink>
               </li>
@@ -60,7 +61,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={`/myEquipments/${user?.email}`}
-                  className="text-base font-semibold"
+                  className="text-base font-medium"
                 >
                   My Equipments
                 </NavLink>
@@ -71,40 +72,18 @@ const Navbar = () => {
                         user?.email && (<li><NavLink to={"/dashboard"} className="text-base font-semibold">Dashboard</NavLink></li>) 
                     } */}
             <li>
-              <NavLink to={"/contact"} className="text-base font-semibold">
+              <NavLink to={"/contact"} className="text-base font-medium">
                 Contact
               </NavLink>
             </li>
           </ul>
         </div>
         <div className="">
-          <div className="hidden lg:block font-semibold text-black text-lg mr-2">
+          <div className="hidden lg:block font-semibold text-black text-base mr-2">
             {user && user?.email ? user?.displayName : ""}
           </div>
 
           {user && user?.email ? (
-            // <div className="dropdown dropdown-end ">
-            //     <div tabIndex={0} role="button"  className="userIcon btn btn-ghost btn-circle avatar">
-            //         <div className="w-11 rounded-full">
-            //             <img alt="user" className="w-11 h-11 rounded-full"
-            //             src={user.photoURL} />
-            //         </div>
-            //     </div>
-            //     <ul
-            //         tabIndex={0}
-            //         className={`userInfo menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow `}>
-
-            //         <li className="block lg:hidden"><a>{user?.displayName}</a></li>
-            //         <li><a>{user?.email}</a></li>
-            //         <li>
-            //             <Link to={"/user/updateInfo"} className="justify-between text-info">
-            //             update profile
-            //             </Link>
-            //         </li>
-            //         <li onClick={handleLogOut} className="font-semibold text-red-500"><a>Logout</a></li>
-            //     </ul>
-            // </div>
-
             <div className="relative group">
               {/* User Icon */}
               <div
@@ -116,7 +95,7 @@ const Navbar = () => {
                   <img
                     alt="user"
                     className="w-11 h-11 rounded-full"
-                    src={user.photoURL}
+                    src={user?.photoURL}
                   />
                 </div>
               </div>
@@ -124,7 +103,7 @@ const Navbar = () => {
               {/* Dropdown Menu */}
               <ul
                 tabIndex={0}
-                className="userInfo absolute -right-5 top-10 menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow hidden group-hover:block"
+                className="userInfo absolute -right-5 top-9 menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow hidden group-hover:block"
               >
                 <li className="block lg:hidden">
                   <a>{user?.displayName}</a>
@@ -171,29 +150,50 @@ const Navbar = () => {
               ></label>
               <ul className="menu bg-base-200 text-base-content min-h-full w-72 p-4">
                 <h2 className="font-bold text-xl flex items-center justify-center gap-2">
-                  {/* <img src={logo} alt="" /> */}
+                  <img src={logo} className="max-w-14" alt="" />
                   SportsGear
                 </h2>
                 <div className="divider divider-info"></div>
 
                 <li>
-                  <NavLink to={"/"} className="text-base font-semibold">
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to={"/about"} className="text-base font-semibold">
-                    About
-                  </NavLink>
-                </li>
-                {/* {
-                            user?.email && (<li><NavLink to={"/dashboard"} className="text-base font-semibold">Dashboard</NavLink></li>) 
-                        } */}
-                <li>
-                  <NavLink to={"/contact"} className="text-base font-semibold">
-                    Contact
-                  </NavLink>
-                </li>
+              <NavLink to={"/"} className="text-base font-medium">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/allEquipments"}
+                className="text-base font-medium"
+              >
+                All Equipments
+              </NavLink>
+            </li>
+            {user?.email && (
+              <li>
+                <NavLink to={"/addItem"} className="text-base font-medium">
+                  Add Equipment
+                </NavLink>
+              </li>
+            )}
+            {user?.email && (
+              <li>
+                <NavLink
+                  to={`/myEquipments/${user?.email}`}
+                  className="text-base font-medium"
+                >
+                  My Equipments
+                </NavLink>
+              </li>
+            )}
+            {/* {
+                    
+                        user?.email && (<li><NavLink to={"/dashboard"} className="text-base font-semibold">Dashboard</NavLink></li>) 
+                    } */}
+            <li>
+              <NavLink to={"/contact"} className="text-base font-medium">
+                Contact
+              </NavLink>
+            </li>
               </ul>
             </div>
           </div>

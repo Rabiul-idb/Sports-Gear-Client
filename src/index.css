@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 
-/* .active{
-    background-color: #152d41;
-} */
+.active{
+    color: rgb(0, 145, 255);
+}
 
 .userIcon:hover .userInfo{
   display: block;

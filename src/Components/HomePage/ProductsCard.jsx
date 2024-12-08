@@ -8,13 +8,13 @@ const ProductsCard = () => {
 
   return (
     <div>
-      <h2 className="text-4xl text-center my-5 font-semibold">
+      <h2 className="lg:text-4xl md:text-3xl text-2xl text-center my-5 font-semibold">
         Products cards
       </h2>
-      <div className="w-11/12 mx-auto grid grid-cols-3 gap-6">
+      <div className="w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
         {allItems.map((item) => {
           return (
-            <div className="border rounded-lg p-5">
+            <div className="border rounded-lg p-3">
               <img
                 src={item.pImg}
                 className="w-full rounded-lg object-contain h-[200px] mb-4"
@@ -40,7 +40,7 @@ const ProductsCard = () => {
                   <p className="font-medium text-lg">Price($): {item.pPrice}</p>
                   <button
                     onClick={() => navigate(`/productDetails/${item._id}`)}
-                    className="btn btn-info text-lg "
+                    className="btn btn-info "
                   >
                     View Details
                   </button>
