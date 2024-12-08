@@ -40,7 +40,7 @@ const Register = () => {
 
         const photo = e.target.photo.value;
 
-        console.log(name, email, password, photo)
+       // console.log(name, email, password, photo)
 
         creatNewUser(email, password)
         .then(result => {
@@ -57,7 +57,7 @@ const Register = () => {
                 confirmButtonText: 'OK'
               })
             navigate('/');
-            console.log(user)
+           // console.log(user)
         })
         .then(error =>{
             const errorCode = error.code;
@@ -65,28 +65,6 @@ const Register = () => {
             console.log(errorCode, errorMessage);
         })
 
-        // CreateNewUser(email, password)
-        // .then((result) =>{
-        //     const user = result.user;
-        //     setUser({...user, displayName: name, photoURL: photo});
-        //     navigate('/')
-            
-        //    // console.log(user);
-        //    toast.success("Congratulation! Successfull Registered ✅", {
-        //     position: "top-center",
-        //     autoClose: 2000,
-        //     theme: "dark"
-        // })
-            
-        //     e.target.reset();
-        // })
-        // .catch((error) => {
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
-        //    // console.log(errorCode, errorMessage)
-        // });
-       
-        
 
     }
 

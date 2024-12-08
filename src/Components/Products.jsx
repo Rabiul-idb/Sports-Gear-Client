@@ -14,7 +14,7 @@ const allItemsData = useLoaderData();
 //  const uniqueCategories = [...new Set(allItems.map(item => item.pCat))];
 
  const handleViewDetails = (id) => {
-    console.log(id)
+   // console.log(id)
     navigate(`/productDetails/${id}`)
  }
 

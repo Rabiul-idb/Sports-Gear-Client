@@ -11,8 +11,8 @@ const UpdateEquipment = () => {
     const navigate = useNavigate();
 
     const updateItem = useLoaderData();
-    console.log(updateItem);
-    console.log(updateItem._id);
+   // console.log(updateItem);
+   
     
     
     const handleUpdateEquipment = (e)=>{
@@ -33,7 +33,7 @@ const UpdateEquipment = () => {
         const userEmail = form.userEmail.value;
 
         const updatedInfo = {pName, pCat, pPrice, pRating, pDesc, pImg, pCus, pTime, stockStatus, userName, userEmail}
-        console.log('updatedInfo');
+       // console.log('updatedInfo');
 
         // send updated data to server
 

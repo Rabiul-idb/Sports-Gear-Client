@@ -5,7 +5,7 @@ const ProductDetails = () => {
 
     const navigate = useNavigate();
     const item = useLoaderData();
-    console.log(item);
+    //console.log(item);
     const {_id, pName, pCat, pCus, pDesc, pImg, pPrice, pTime, pRating, stockStatus, userName, userEmail} = item || {};
 
 

@@ -18,7 +18,7 @@ const Login = () => {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    //console.log(email, password);
 
     userLogin(email, password)
       .then((userCredential) => {
@@ -49,7 +49,7 @@ const Login = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user);
+       // console.log(user);
         setUser(user);
         Swal.fire({
             title: "Success!",

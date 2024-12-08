@@ -9,7 +9,7 @@ const UpdateInfo = () => {
 
     const {user, setUser, auth} = useContext(ContextProvider);
     const{displayName, photoURL} = user || {};
-    console.log(displayName, photoURL)
+    //console.log(displayName, photoURL)
     
     const handleUpdate = (e)=>{
         e.preventDefault();

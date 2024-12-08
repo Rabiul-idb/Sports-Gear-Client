@@ -2,7 +2,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const ProductsCard = () => {
   const allItems = useLoaderData();
-  console.log(allItems);
+ // console.log(allItems);
 
   const navigate = useNavigate();
 

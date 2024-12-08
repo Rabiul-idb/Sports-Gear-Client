@@ -7,13 +7,13 @@ import Swal from "sweetalert2";
 
 const MyEquipments = () => {
   const myEquipments = useLoaderData();
-  console.log(myEquipments);
+  //console.log(myEquipments);
   const navigate = useNavigate();
 
   const [equipments, setEquipments] = useState(myEquipments);
 
   const handleDelete = (id) => {
-    console.log(id);
+   // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -29,7 +29,7 @@ const MyEquipments = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+           // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",

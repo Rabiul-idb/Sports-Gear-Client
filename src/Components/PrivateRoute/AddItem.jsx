@@ -5,7 +5,7 @@ import { ContextProvider } from '../ContextProvider/AuthContext';
 const AddItem = () => {
 
   const {user} = useContext(ContextProvider);
-  console.log(user?.email, user?.displayName);
+ // console.log(user?.email, user?.displayName);
 
   const handleAddItem = e =>{
     e.preventDefault();
@@ -24,7 +24,7 @@ const AddItem = () => {
     const userEmail = form.userEmail.value;
 
     const newItem = {pName, pCat, pPrice, pPrice, pRating, pDesc, pImg, pCus, pTime, stockStatus, userName, userEmail}
-    console.log(newItem);
+   // console.log(newItem);
 
     // send data to server
 
@@ -37,7 +37,7 @@ const AddItem = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+     // console.log(data)
       if(data.insertedId){
         Swal.fire({
           title: 'Success!',
