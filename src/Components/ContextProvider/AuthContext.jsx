@@ -15,7 +15,7 @@ const AuthContext = ({children}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/allItems')
+        fetch('https://server-side-pi-ashy.vercel.app/allItems')
         .then(res => res.json())
         .then(data => setAllItems(data))
     }, [])

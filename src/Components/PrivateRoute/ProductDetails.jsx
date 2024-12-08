@@ -27,7 +27,7 @@ const ProductDetails = () => {
                 <p className="text-base text-gray-700 font-semibold mb-2"> Delivery Time: {pTime}</p>
                 <p className="text-base text-gray-700 font-semibold mb-2"> Status: {stockStatus}</p>
                 <p className="text-base text-gray-700 font-semibold mb-2"> Rating: {pRating}</p>
-                <button className="btn btn-info text-lg mt-4 mr-4">Add to Cart</button>
+                <button className="btn btn-info text-lg mt-4 mr-4" disabled>Add to Cart</button>
                 <button onClick={() => navigate(-1)} className="btn text-lg">go back</button>
 
             </div>

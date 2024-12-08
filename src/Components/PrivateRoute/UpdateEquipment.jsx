@@ -37,7 +37,7 @@ const UpdateEquipment = () => {
 
         // send updated data to server
 
-        fetch(`http://localhost:5000/updateEquipment/${updateItem._id}`,{
+        fetch(`https://server-side-pi-ashy.vercel.app/updateEquipment/${updateItem._id}`,{
             method: 'PUT',
             headers:{
                 'content-type': 'application/json',
@@ -55,6 +55,7 @@ const UpdateEquipment = () => {
                   icon: 'success',
                   confirmButtonText: 'ok'
                 })
+                form.reset();
             }
             navigate(`/myEquipments/${user?.email}`);
 

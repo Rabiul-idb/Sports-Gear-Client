@@ -24,7 +24,7 @@ const MyEquipments = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myEquipment/${id}`, {
+        fetch(`https://server-side-pi-ashy.vercel.app/myEquipment/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

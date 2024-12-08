@@ -28,7 +28,7 @@ const AddItem = () => {
 
     // send data to server
 
-    fetch('http://localhost:5000/addItems',{
+    fetch('https://server-side-pi-ashy.vercel.app/addItems',{
       method: 'POST',
       headers:{
         'content-type': 'application/json',
@@ -45,6 +45,7 @@ const AddItem = () => {
           icon: 'success',
           confirmButtonText: 'Cool'
         })
+        form.reset();
       }
     })
   }

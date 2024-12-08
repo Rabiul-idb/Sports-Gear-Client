@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage></Homepage>,
-        loader: () => fetch("http://localhost:5000/homeItems"),
+        loader: () => fetch("https://server-side-pi-ashy.vercel.app/homeItems"),
       },
       {
         path: "/allEquipments",
         element: <Products></Products>,
-        loader: () => fetch("http://localhost:5000/allItems"),
+        loader: () => fetch("https://server-side-pi-ashy.vercel.app/allItems"),
       },
       {
         path: "/productDetails/:id",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productDetails/${params.id}`),
+          fetch(`https://server-side-pi-ashy.vercel.app/productDetails/${params.id}`),
       },
       {
         path: "/addItem",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allItems/${params.email}`),
+          fetch(`https://server-side-pi-ashy.vercel.app/allItems/${params.email}`),
       },
       {
         path: "/login",
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updateEquipment/${params.id}`),
+          fetch(`https://server-side-pi-ashy.vercel.app/updateEquipment/${params.id}`),
       },
     ],
   },
