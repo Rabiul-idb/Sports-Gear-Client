@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { ContextProvider } from "../ContextProvider/AuthContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from "../../assets/lottie-login.json";
 
 const Login = () => {
   const { userLogin, setUser, auth } = useContext(ContextProvider);
@@ -49,17 +51,16 @@ const Login = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-       // console.log(user);
+        // console.log(user);
         setUser(user);
         Swal.fire({
-            title: "Success!",
-            text: "Congrates! Successfully login",
-            icon: "success",
-            confirmButtonText: "OK",
-          });
-        navigate(user?.state ? user.state : '/');
+          title: "Success!",
+          text: "Congrates! Successfully login",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        navigate(user?.state ? user.state : "/");
         // IdP data available using getAdditionalUserInfo(result)
-        
       })
       .catch((error) => {
         // Handle Errors here.
@@ -74,75 +75,81 @@ const Login = () => {
   };
 
   return (
-    <div className="border border-gray-500 rounded-2xl p-7 lg:w-5/12 md:w-8/12 w-10/12 mx-auto mt-12 mb-10 bg-cyan-50 ">
-      <h2 className="font-bold lg:text-3xl md:text-2xl text-xl mb-5 text-center">
-        User Login
-      </h2>
-      <div className="text-center">
-        <button
-          onClick={handelGoogleLogin}
-          className="btn btn-info text-white flex justify-center items-center lg:text-lg  mx-auto mt-5"
-        >
-          <FaGoogle></FaGoogle> login with google
-        </button>
-        <br></br>
-        <div className="divider divider-info">OR</div>
-      </div>
-      <form onSubmit={handleLogin}>
-        <div className="mb-5">
-          <label className="text-text-clr font-semibold text-base">Email</label>
+    <div className="border border-gray-500 rounded-2xl p-7 w-9/12 mx-auto mt-12 mb-10 bg-cyan-50 grid lg:grid-cols-2 grid-cols-1 gap-7 items-center">
+      <Player autoplay loop src={animationData} className="w-fit" />
+
+      <div>
+        <h2 className="font-bold lg:text-3xl md:text-2xl text-xl mb-5 text-center">
+          User Login
+        </h2>
+        <div className="text-center">
+          <button
+            onClick={handelGoogleLogin}
+            className="btn btn-info text-white flex justify-center items-center lg:text-lg  mx-auto mt-5"
+          >
+            <FaGoogle></FaGoogle> login with google
+          </button>
           <br></br>
-          <input
-            placeholder="User email"
-            required
-            type="email"
-            name="email"
-            className="outline outline-gray-400 w-full h-11 rounded-lg px-5 mt-2"
-          />
-          <label>
-            {error.forgot && (
-              <p className="text-red-500 text-sm mt-1">{error.forgot}</p>
-            )}
-          </label>
+          <div className="divider divider-info">OR</div>
         </div>
-        <div>
-          <label className="text-text-clr font-semibold text-base relative">
-            Password<br></br>
+        <form onSubmit={handleLogin}>
+          <div className="mb-5">
+            <label className="text-text-clr font-semibold text-base">
+              Email
+            </label>
+            <br></br>
             <input
-              placeholder="Password"
+              placeholder="User email"
               required
-              type={!showPassword ? "password" : "text"}
-              name="password"
+              type="email"
+              name="email"
               className="outline outline-gray-400 w-full h-11 rounded-lg px-5 mt-2"
             />
-            <a
-              onClick={() => setShowPassword(!showPassword)}
-              className="btn btn-sm absolute right-2 top-9 text-base"
-            >
-              {!showPassword ? <FaEyeSlash /> : <FaRegEye />}
+            <label>
+              {error.forgot && (
+                <p className="text-red-500 text-sm mt-1">{error.forgot}</p>
+              )}
+            </label>
+          </div>
+          <div>
+            <label className="text-text-clr font-semibold text-base relative">
+              Password<br></br>
+              <input
+                placeholder="Password"
+                required
+                type={!showPassword ? "password" : "text"}
+                name="password"
+                className="outline outline-gray-400 w-full h-11 rounded-lg px-5 mt-2"
+              />
+              <a
+                onClick={() => setShowPassword(!showPassword)}
+                className="btn btn-sm absolute right-2 top-9 text-base"
+              >
+                {!showPassword ? <FaEyeSlash /> : <FaRegEye />}
+              </a>
+            </label>
+          </div>
+          <label>
+            {error.login && (
+              <p className="text-red-500 text-sm mt-1">{error.login}</p>
+            )}
+          </label>
+          <label className="label">
+            <a className="label-text-alt link link-hover text-sm">
+              Forgot password?
             </a>
           </label>
-        </div>
-        <label>
-          {error.login && (
-            <p className="text-red-500 text-sm mt-1">{error.login}</p>
-          )}
-        </label>
-        <label className="label">
-          <a className="label-text-alt link link-hover text-sm">
-            Forgot password?
-          </a>
-        </label>
-        <button className="btn hover:bg-info bg-info text-white font-bold text-lg px-8 py-2 rounded-3xl border border-white mt-5 block mx-auto">
-          Login
-        </button>
-      </form>
-      <p className="font-medium text-sm text-center mt-4">
-        Don't have an account?{" "}
-        <Link to={"/register"} className="text-info underline">
-          Click Here
-        </Link>
-      </p>
+          <button className="btn hover:bg-info bg-info text-white font-bold text-lg px-8 py-2 rounded-3xl border border-white mt-5 block mx-auto">
+            Login
+          </button>
+        </form>
+        <p className="font-medium text-sm text-center mt-4">
+          Don't have an account?{" "}
+          <Link to={"/register"} className="text-info underline">
+            Click Here
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

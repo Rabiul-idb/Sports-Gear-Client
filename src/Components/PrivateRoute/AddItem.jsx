@@ -194,3 +194,14 @@ const AddItem = () => {
 };
 
 export default AddItem;
+
+
+// https://i.ibb.co.com/3M4k8N6/beef-Pizza.png
+// https://i.ibb.co.com/jLXJDHf/stackwithsalad.png
+// https://i.ibb.co.com/Y3hTKCB/beef-Burger.png
+// https://i.ibb.co.com/CKJ5YKJ/stackwith-Vegitable.png
+// https://i.ibb.co.com/D4qTgWp/friedrice-Plater.png
+// https://i.ibb.co.com/VpCrK8Z/chicken-Fry.png
+// https://i.ibb.co.com/j5GC7s6/brownee.png
+// https://i.ibb.co.com/qWpBnw9/burger.png
+// https://i.ibb.co.com/vwFJH9J/pizza.png

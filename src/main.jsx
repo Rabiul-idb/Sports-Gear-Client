@@ -36,11 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: (
-          <PrivateRoute>
-            <ProductDetails></ProductDetails>
-          </PrivateRoute>
-        ),
+        element:  <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
           fetch(`https://server-side-pi-ashy.vercel.app/productDetails/${params.id}`),
       },

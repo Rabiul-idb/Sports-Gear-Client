@@ -39,3 +39,8 @@ body{
     max-height: 600px;
     object-fit: cover;
   }
+
+  .brands .swiper-slide img{
+    width: auto;
+    max-height: 100px;
+  }

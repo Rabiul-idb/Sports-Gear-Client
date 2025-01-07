@@ -9,9 +9,9 @@ const ProductsCard = () => {
   return (
     <div>
       <h2 className="lg:text-4xl md:text-3xl text-2xl text-center my-5 font-semibold">
-        Products cards
+        Featured Products
       </h2>
-      <div className="w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+      <div className="w-11/12 mx-auto grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         {allItems.map((item) => {
           return (
             <div className="border rounded-lg p-3">
@@ -22,9 +22,9 @@ const ProductsCard = () => {
               />
               <div>
                 <h2 className="font-semibold text-xl">{item.pName}</h2>
-                <p className="font-medium text-lg text-gray-600">
+                {/* <p className="font-medium text-lg text-gray-600">
                   {item.pDesc}
-                </p>
+                </p> */}
                 <p
                   className={`font-medium text-lg text-gray-600 ${
                     item.stockStatus > 5
@@ -37,7 +37,7 @@ const ProductsCard = () => {
                   {item.stockStatus}
                 </p>
                 <div className="flex justify-between items-center">
-                  <p className="font-medium text-lg">Price($): {item.pPrice}</p>
+                  <p className="font-medium text-lg">$ {item.pPrice}</p>
                   <button
                     onClick={() => navigate(`/productDetails/${item._id}`)}
                     className="btn btn-info "

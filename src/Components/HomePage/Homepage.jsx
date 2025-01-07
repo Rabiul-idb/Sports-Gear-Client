@@ -1,6 +1,8 @@
 import Banner from "./Banner";
 import Products from "../Products";
 import ProductsCard from "./ProductsCard";
+import Service from "./Service";
+import PopularBrands from "./PopularBrands";
 
 
 
@@ -13,8 +15,9 @@ const Homepage = () => {
             
           <Banner></Banner>
           {/* <Products></Products> */}
+          <Service></Service>
+          <PopularBrands></PopularBrands>
           <ProductsCard></ProductsCard>
-
             {/* https://i.ibb.co.com/XkSyTmt/badminton-cock.webp
 https://i.ibb.co.com/8MnfqJq/badminton-racket.jpg
 https://i.ibb.co.com/6HxY8D1/boot-show.jpg

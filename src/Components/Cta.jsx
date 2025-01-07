@@ -5,7 +5,7 @@ import { FaRegEnvelope } from 'react-icons/fa6';
 
 const Cta = () => {
     return (
-        <div className=' flex gap-6 flex-col md:flex-row justify-between  md:py-1 px-10 py-5 mt-5 shadow-lg rounded-xl bg-info w-10/12 mx-auto relative'>
+        <div className=' flex gap-6 flex-col md:flex-row justify-between  md:py-1 px-10 py-5 mt-5 shadow-lg rounded-xl bg-info w-11/12 mx-auto relative'>
             <div className='flex gap-2'>
                     
                 <FaRegEnvelope className='text-5xl font-bold mt-4 text-white'/>
