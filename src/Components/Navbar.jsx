@@ -76,6 +76,11 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+            <li>
+              <NavLink to={"/aboutUs"} className="text-base font-medium">
+                About Us
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="">
